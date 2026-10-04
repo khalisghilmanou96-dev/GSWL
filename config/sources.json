@@ -1,0 +1,71 @@
+{
+  "version": "4.2",
+  "policy": "national official adapter > compatible supranational adapter > ILOSTAT fallback > retained last official observation",
+  "active_adapters": [
+    {
+      "id": "BLS_US",
+      "currency": "USD",
+      "series_id": "CES0500000003",
+      "metric": "average hourly earnings, total private",
+      "frequency": "monthly",
+      "unit": "USD/hour",
+      "promotion": "active"
+    },
+    {
+      "id": "ILOSTAT",
+      "currency": "multi",
+      "metric": "average earnings fallback",
+      "promotion": "active fallback"
+    }
+  ],
+  "validated_next": [
+    {
+      "id": "ONS_UK",
+      "currency": "GBP",
+      "metric": "Average Weekly Earnings",
+      "frequency": "monthly",
+      "promotion": "candidate"
+    },
+    {
+      "id": "STATCAN_CA",
+      "currency": "CAD",
+      "series_id": "14-10-0222-01",
+      "metric": "average weekly earnings including overtime",
+      "frequency": "monthly",
+      "promotion": "candidate"
+    },
+    {
+      "id": "ABS_AU",
+      "currency": "AUD",
+      "metric": "Average Weekly Earnings",
+      "frequency": "semiannual",
+      "promotion": "candidate"
+    },
+    {
+      "id": "OECD",
+      "currency": "multi",
+      "metric": "Average annual wages, current prices NCU",
+      "frequency": "annual",
+      "promotion": "candidate fallback"
+    }
+  ],
+  "monitored": [
+    "EUROSTAT",
+    "ESTAT_JP",
+    "KOSIS_KR",
+    "INEGI_MX",
+    "IBGE_BR",
+    "BPS_ID",
+    "TURKSTAT_TR",
+    "GASTAT_SA",
+    "FSCS_AE",
+    "FSO_CH",
+    "STATISTICS_PL",
+    "SCB_SE",
+    "SSB_NO",
+    "NBS_CN",
+    "MOSPI_IN",
+    "ROSSTAT_RU"
+  ],
+  "rule": "A monitored endpoint is never called an active salary feed until its exact series, unit, frequency and parser are validated."
+}
