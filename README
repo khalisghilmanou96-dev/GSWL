@@ -1,0 +1,343 @@
+Global Salary Watch LIVE (GSWL)
+README bilingue / Bilingual README — Français 🇫🇷 / English 🇬🇧
+🇫🇷 Version française
+Data Engine V4.2
+GSWL est un moteur de surveillance de données salariales officielles. Il
+interroge périodiquement des sources publiques, conserve la dernière
+observation officielle disponible et sépare explicitement le moment où
+le moteur s'exécute, le moment où une source répond et le moment où une
+observation précise est effectivement vérifiée.
+Avertissement — GSWL est un outil d’information, d’analyse et de recherche expérimentale et ne constitue en aucun cas un conseil, une recommandation ou une incitation à acheter, vendre ou vendre à découvert un instrument financier. Toute décision d’investissement demeure sous l’entière responsabilité de l’utilisateur. Les marchés financiers comportent un risque de perte partielle ou totale du capital et, selon les instruments, l’utilisation de l’effet de levier ou la vente à découvert, les pertes peuvent excéder le capital initialement engagé. Les données, alertes, analyses, hypothèses, simulations et performances historiques présentées par GSWL ne garantissent aucun résultat ni aucune performance future.
+
+Hypothèse de recherche : alerte salariale haussière et scénario SELL / SHORT
+Hypothèse
+L'hypothèse étudiée est la suivante :
+une surprise salariale positive suffisamment forte, détectée
+rapidement après sa publication officielle, peut augmenter les
+anticipations d'inflation et/ou de politique monétaire restrictive,
+pousser les rendements obligataires à la hausse et créer une pression
+baissière de court terme sur certains actifs sensibles aux taux.
+Le signal pertinent n'est donc pas simplement « les salaires ont
+augmenté ». Il est plutôt :
+hausse salariale inattendue + surprise significative par rapport aux
+attentes + régime macroéconomique où l'inflation/la politique monétaire
+est importante pour le marché + réaction des taux confirmant le choc.
+Dans ce cadre, GSWL peut servir de couche de détection. L'alerte n'est
+pas, à elle seule, un ordre SELL.
+Pourquoi l'hypothèse est économiquement plausible
+Une croissance salariale plus forte qu'anticipé peut être interprétée
+comme un signe de tension persistante sur le marché du travail et, selon
+le régime économique, comme une pression potentielle sur les coûts et
+l'inflation. Si le marché révise alors à la hausse la trajectoire
+attendue des taux directeurs, les rendements obligataires peuvent
+monter.
+La transmission envisagée est :
+surprise salariale positive →
+risque inflationniste / économie plus résistante →
+anticipation de taux plus élevés ou de baisses de taux repoussées →
+hausse des rendements → taux d'actualisation plus élevé →
+pression potentielle sur les actifs sensibles aux taux →
+opportunité SHORT à tester
+Cette chaîne est particulièrement intéressante pour les actions de
+croissance/longue duration et les indices fortement exposés aux
+valorisations sensibles aux taux. Elle n'implique cependant pas que
+toutes les actions doivent baisser : une bonne nouvelle sur l'activité
+peut simultanément améliorer les anticipations de bénéfices.
+Éléments historiques qui appuient l'hypothèse
+1. Les surprises du rapport emploi déplacent réellement les marchés
+La Federal Reserve Bank of New York a étudié les réactions à 13 annonces
+macroéconomiques sur la période 1998--2007. Les auteurs concluent que
+seules quelques annonces ont des effets économiquement importants et
+persistants, parmi lesquelles les nonfarm payrolls. Les rendements
+obligataires présentent la réaction la plus forte. Les nouvelles de
+croissance et d'inflation supérieures aux attentes tendent à faire
+monter les rendements obligataires et le dollar.
+Pour GSWL, c'est important : les données salariales américaines sont
+publiées dans le même rapport Employment Situation et participent à
+l'interprétation inflationniste du rapport.
+Source : Federal Reserve Bank of New York, How Economic News Moves
+Markets
+https://www.newyorkfed.org/research/current_issues/ci14-6.html
+2. La Fed a explicitement inclus les surprises de salaire horaire dans une étude événementielle
+Une note du Board of Governors analyse les réactions du Treasury 10 ans
+aux publications du rapport emploi sur un historique allant de janvier
+1993 à décembre 2019. L'étude utilise une fenêtre très courte de 30
+minutes autour de la publication --- 5 minutes avant et 25 minutes après
+--- et inclut simultanément les surprises de :
+- nonfarm payrolls ;
+- hourly earnings ;
+- taux de chômage.
+Cela confirme que la surprise sur les salaires horaires est une variable
+pertinente dans l'analyse haute fréquence de la réaction des taux au
+rapport emploi.
+Source : Board of Governors of the Federal Reserve System, Why Were
+Treasury Yields So Stable Over the Summer?
+https://www.federalreserve.gov/econres/notes/feds-notes/why-were-treasury-yields-so-stable-over-the-summer-20201229.html
+3. Le canal taux → actions possède un support empirique historique
+Bernanke et Kuttner ont étudié les surprises de politique monétaire sur
+la période juin 1989--décembre 2002. Leur résultat de référence indique
+qu'une baisse inattendue de 25 points de base du taux des federal funds
+est associée à une hausse d'environ 1 % d'un indice actions large.
+Par symétrie économique --- sans supposer une parfaite symétrie
+statistique --- une information qui fait réviser les anticipations de
+taux vers le haut fournit donc un mécanisme plausible de pression sur
+les valorisations actions.
+Source : Federal Reserve Bank of New York, Bernanke & Kuttner, What
+Explains the Stock Market's Reaction to Federal Reserve Policy?
+https://www.newyorkfed.org/research/staff_reports/sr174.html
+4. Exemple récent cohérent avec le mécanisme inverse
+Le rapport emploi américain de septembre 2026 fournit un exemple utile
+dans la direction opposée. Le BLS a publié une hausse des average hourly
+earnings de seulement 0,1 % sur le mois, à 37,81 USD/heure, et
+3,0 % sur douze mois.
+Cette faiblesse du rapport emploi et des salaires a réduit les
+anticipations de hausse de taux ; les grands indices actions ont
+progressé dans la séance. Ce cas ne prouve pas que l'inverse se produit
+systématiquement, mais il est cohérent avec le canal recherché : données
+emploi/salaires plus faibles → anticipation monétaire moins restrictive
+→ soutien aux actions.
+Sources :
+U.S. Bureau of Labor Statistics, Employment Situation --- September
+2026
+https://www.bls.gov/news.release/archives/empsit_10022026.htm
+Reuters, Soft September jobs report sends markets higher, 2 octobre
+2026
+https://www.reuters.com/business/view-soft-september-jobs-report-sends-markets-higher-2026-10-02/
+Formulation du signal GSWL à tester
+Pour éviter un faux signal, une future stratégie expérimentale ne
+devrait pas déclencher un SHORT sur la seule variation entre deux
+observations salariales.
+Le signal devrait idéalement mesurer :
+salary_surprise = valeur publiée - consensus avant publication
+ou, sous forme standardisée :
+standardized_surprise = (valeur publiée - consensus) / volatilité historique des surprises
+La variation GSWL :
+change_pct = (valeur actuelle - valeur précédente) / valeur précédente
+reste informative, mais n'est pas équivalente à une surprise de
+marché. Un salaire peut progresser fortement tout en étant
+parfaitement anticipé et donc provoquer très peu de réaction.
+Scénario SELL expérimental
+Une hypothèse plus robuste serait de tester un SHORT uniquement lorsque
+plusieurs conditions convergent :
+1. GSWL détecte une nouvelle observation salariale officielle.
+2. La croissance salariale est supérieure au consensus disponible juste
+   avant la publication.
+3. La surprise dépasse un seuil statistique prédéfini.
+4. Le rendement obligataire pertinent monte immédiatement après la
+   publication.
+5. Le mouvement n'est pas contredit par une forte surprise négative des
+   payrolls ou une hausse importante du chômage.
+6. L'entrée est évaluée sur une fenêtre prédéfinie après l'alerte, sans
+   modifier les règles après observation du résultat.
+Le rendement obligataire joue ici le rôle de confirmation du
+mécanisme. Une surprise salariale positive sans hausse des taux peut
+signifier que le marché l'avait anticipée, qu'il privilégie une autre
+information du rapport ou que le régime macroéconomique a changé.
+Fenêtres historiques à mesurer
+Pour chaque alerte historique, le backtest devrait enregistrer le prix
+de l'actif au moment de la publication et calculer les rendements SHORT
+à :
+- +5 minutes ;
+- +15 minutes ;
+- +30 minutes ;
+- +1 heure ;
+- clôture de séance ;
+- +1 jour ;
+- +3 jours ;
+- +5 jours.
+Pour chaque événement, conserver également :
+- surprise salariale brute et standardisée ;
+- surprise payrolls ;
+- surprise chômage ;
+- variation du Treasury 2 ans et 10 ans ;
+- variation de l'indice actions ;
+- volatilité avant publication ;
+- régime d'inflation ;
+- politique monétaire du moment ;
+- Maximum Favorable Excursion (MFE) du SHORT ;
+- Maximum Adverse Excursion (MAE) ;
+- rendement net après spread, slippage et coûts.
+Critère de validation de l'hypothèse
+L'objectif du backtest n'est pas de sélectionner quelques journées
+célèbres favorables au scénario. Il faut tester toutes les
+publications disponibles sur une période suffisamment longue.
+L'hypothèse SELL gagnerait en crédibilité si, après coûts :
+- les surprises salariales positives importantes produisent un
+  rendement SHORT moyen positif dans une fenêtre prédéfinie ;
+- l'effet est plus marqué lorsque les rendements 2 ans/10 ans montent
+  après la publication ;
+- le taux de réussite et l'espérance restent positifs hors échantillon
+  ;
+- les résultats survivent à plusieurs régimes de taux et d'inflation ;
+- le résultat ne dépend pas de quelques événements extrêmes.
+À l'inverse, si l'effet disparaît hors échantillon, après coûts, ou
+après contrôle des surprises payrolls/chômage, l'hypothèse devra être
+rejetée ou reformulée.
+Risques et limites
+Une position SELL/SHORT peut subir des pertes rapides lors d'une réaction
+de marché opposée à l'hypothèse. Les prix peuvent également connaître du
+slippage, des gaps, une volatilité extrême ou une inversion après la
+publication. Les frais, spreads, coûts d'emprunt, appels de marge et effet
+de levier peuvent aggraver le résultat réel par rapport à un backtest.
+GSWL doit donc être considéré comme un outil de détection et de recherche
+statistique, et non comme un système garantissant un point d'entrée,
+un rendement ou un gain maximal. Toute validation de l'hypothèse doit
+inclure les événements défavorables et les pertes, et pas uniquement les
+cas historiques qui la confirment.
+Conclusion de l'analyse unilatérale
+Les éléments historiques disponibles donnent un fondement crédible à
+l'hypothèse directionnelle GSWL : les annonces du marché du travail
+comptent pour les prix d'actifs, les surprises d'hourly earnings font
+partie des variables utilisées pour expliquer les réactions des
+rendements autour du rapport emploi, et les changements inattendus de
+politique monétaire ont historiquement des effets importants sur les
+actions.
+Cela justifie la construction et le backtest d'un signal :
+surprise salariale haussière → confirmation par hausse des rendements
+→ scénario SELL/SHORT.
+En revanche, les sources étudiées ne démontrent pas qu'un SHORT
+immédiatement après toute hausse salariale « maximise les gains ». Cette
+affirmation ne pourra être évaluée qu'après constitution d'une base
+historique contenant publication, consensus, timestamp, réaction des
+taux et prix de marché intraday. La valeur de GSWL est précisément de
+fournir la couche de détection et de timestamp nécessaire à ce futur
+test.
+Sources principales
+- U.S. Bureau of Labor Statistics --- CES / Employment Situation
+  https://www.bls.gov/ces/data/
+- U.S. Bureau of Labor Statistics --- September 2026 Employment
+  Situation
+  https://www.bls.gov/news.release/archives/empsit_10022026.htm
+- Federal Reserve Board --- Why Were Treasury Yields So Stable Over
+  the Summer?
+  https://www.federalreserve.gov/econres/notes/feds-notes/why-were-treasury-yields-so-stable-over-the-summer-20201229.html
+- Federal Reserve Bank of New York --- How Economic News Moves
+  Markets
+  https://www.newyorkfed.org/research/current_issues/ci14-6.html
+- Bernanke & Kuttner --- What Explains the Stock Market's Reaction to
+  Federal Reserve Policy?
+  https://www.newyorkfed.org/research/staff_reports/sr174.html
+État actuel du moteur
+GSWL V4.2 contrôle ses sources à fréquence horaire. La fréquence de
+contrôle du moteur ne doit pas être confondue avec la fréquence de
+publication de chaque série salariale (mensuelle, trimestrielle,
+semestrielle ou annuelle).
+La politique de sélection des données reste :
+source nationale officielle > source supranationale compatible > fallback ILOSTAT > dernière observation officielle conservée
+Les valeurs utilisant des unités ou des définitions différentes ne
+doivent jamais être comparées directement comme s'il s'agissait d'une
+même série.
+🇬🇧 English version
+Data Engine V4.2
+GSWL is an official salary-data monitoring engine. It periodically checks public sources, preserves the latest available official observation, and explicitly separates the time when the engine runs, the time when a source responds, and the time when a specific observation is actually verified.
+Disclaimer — GSWL is an information, analysis, and experimental research tool and does not constitute financial advice, a recommendation, or an inducement to buy, sell, or short any financial instrument. Every investment decision remains entirely the user's responsibility. Financial markets involve the risk of partial or total loss of capital and, depending on the instrument, leverage, or short-selling structure used, losses may exceed the capital initially committed. Data, alerts, analyses, hypotheses, simulations, and historical performance presented by GSWL do not guarantee any result or future performance.
+
+Research hypothesis: bullish wage surprise and SELL / SHORT scenario
+Hypothesis
+The hypothesis being investigated is:
+a sufficiently strong positive wage surprise, detected quickly after its official release, may increase inflation and/or restrictive monetary-policy expectations, push bond yields higher, and create short-term downward pressure on certain rate-sensitive assets.
+The relevant signal is therefore not simply “wages increased.” It is more specifically:
+unexpected wage growth + a meaningful surprise versus expectations + a macroeconomic regime in which inflation/monetary policy matters to markets + a confirming reaction in interest rates.
+Under this framework, GSWL can act as the detection layer. An alert is not, by itself, a SELL order.
+Why the hypothesis is economically plausible
+Stronger-than-expected wage growth may be interpreted as evidence of persistent labor-market pressure and, depending on the economic regime, as a potential source of cost and inflation pressure. If markets consequently revise the expected path of policy rates upward, bond yields may rise.
+The proposed transmission mechanism is:
+positive wage surprise
+→ inflation risk / stronger economy
+→ higher-for-longer rates or delayed rate cuts
+→ higher yields
+→ higher discount rates
+→ potential pressure on rate-sensitive assets
+→ SHORT opportunity to be tested
+This channel may be particularly relevant to growth/long-duration equities and indices whose valuations are highly sensitive to rates. It does not imply that all equities must fall: stronger economic data may simultaneously improve earnings expectations.
+Historical evidence supporting the hypothesis
+1. Employment-report surprises materially move markets
+The Federal Reserve Bank of New York studied market reactions to 13 macroeconomic announcements over 1998–2007. It found that only a limited number produced economically important and persistent effects, including nonfarm payrolls, with bond yields showing particularly strong reactions. Stronger-than-expected growth and inflation news tends to push bond yields and the dollar higher.
+For GSWL, this matters because U.S. wage data are released as part of the Employment Situation report and contribute to the market's inflation interpretation of that report.
+Source: Federal Reserve Bank of New York, How Economic News Moves Markets
+https://www.newyorkfed.org/research/current_issues/ci14-6.html
+2. The Federal Reserve explicitly included hourly-earnings surprises in an event study
+A Board of Governors note analyzes 10-year Treasury reactions to employment reports using data from January 1993 through December 2019. It uses a 30-minute event window — 5 minutes before and 25 minutes after the release — and simultaneously includes surprises in:
+- nonfarm payrolls;
+- hourly earnings;
+- unemployment.
+This confirms that wage surprises are a relevant variable in high-frequency analysis of interest-rate reactions around employment releases.
+Source: Board of Governors of the Federal Reserve System, Why Were Treasury Yields So Stable Over the Summer?
+https://www.federalreserve.gov/econres/notes/feds-notes/why-were-treasury-yields-so-stable-over-the-summer-20201229.html
+3. The rates-to-equities channel has historical empirical support
+Bernanke and Kuttner studied monetary-policy surprises from June 1989 through December 2002. Their benchmark result associates an unexpected 25-basis-point federal-funds-rate cut with roughly a 1% increase in a broad equity index.
+By economic symmetry — without assuming perfect statistical symmetry — information that causes markets to revise rate expectations upward therefore provides a plausible mechanism for downward pressure on equity valuations.
+Source: Federal Reserve Bank of New York, Bernanke & Kuttner, What Explains the Stock Market's Reaction to Federal Reserve Policy?
+https://www.newyorkfed.org/research/staff_reports/sr174.html
+4. Recent example consistent with the inverse mechanism
+The September 2026 U.S. Employment Situation provides a useful example in the opposite direction. The BLS reported average hourly earnings rising only 0.1% month over month, to $37.81/hour, and 3.0% year over year.
+The soft employment/wage report reduced expectations of tighter monetary policy and major equity indices advanced during the session. This does not prove that the opposite reaction always occurs, but it is consistent with the channel being investigated: weaker employment/wage data → less restrictive policy expectations → support for equities.
+Sources:
+U.S. Bureau of Labor Statistics, Employment Situation — September 2026
+https://www.bls.gov/news.release/archives/empsit_10022026.htm
+Reuters, Soft September jobs report sends markets higher, October 2, 2026
+https://www.reuters.com/business/view-soft-september-jobs-report-sends-markets-higher-2026-10-02/
+GSWL signal formulation to be tested
+A future experimental strategy should not trigger a SHORT solely because the current wage observation increased relative to the previous observation.
+The signal should ideally measure:
+salary_surprise = released value - pre-release consensus
+or, in standardized form:
+standardized_surprise = (released value - consensus) / historical surprise volatility
+The existing GSWL change measure:
+change_pct = (current value - previous value) / previous value
+remains informative, but is not equivalent to a market surprise.
+Additional variable: pre-release consensus
+GSWL should add:
+consensus_value
+This represents the median or consensus market estimate captured before the official release. From it, the research layer can calculate:
+surprise_value = actual_value - consensus_value
+surprise_pct = ((actual_value - consensus_value) / abs(consensus_value)) × 100
+and, when enough historical observations exist:
+standardized_surprise = surprise_value / historical standard deviation of surprises
+The consensus timestamp should also be retained:
+consensus_captured_at
+This establishes that the expectation used by the model was known before the official release and helps prevent hindsight bias.
+This distinction is essential. Wage growth of 0.4% may be materially hawkish when the market expected 0.2%, but much less informative when consensus was already 0.4% or 0.5%.
+The experimental chain therefore becomes:
+released value + consensus_value → surprise → yield confirmation → SHORT scenario to test
+A detected signal never means that a trade will be profitable and does not transform a GSWL alert into financial advice.
+Experimental SELL scenario
+A more robust hypothesis would test a SHORT only when several conditions converge:
+1. GSWL detects a new official wage observation.
+2. Wage growth exceeds the consensus available before the release.
+3. The surprise exceeds a predefined statistical threshold.
+4. The relevant bond yield rises immediately after the release.
+5. The move is not contradicted by a major negative payroll surprise or a significant rise in unemployment.
+6. Entry is evaluated over a predefined post-alert window without changing the rules after observing the result.
+The bond yield acts as confirmation of the proposed mechanism. A positive wage surprise without a rise in yields may indicate that the market had already priced it in, that another component of the report dominates, or that the macroeconomic regime has changed.
+Historical windows to measure
+For each historical alert, a backtest should record the asset price at publication and calculate SHORT returns at +5 minutes, +15 minutes, +30 minutes, +1 hour, market close, +1 day, +3 days, and +5 days.
+The dataset should also retain the raw and standardized wage surprise, payroll and unemployment surprises, 2-year and 10-year Treasury reactions, equity-index reaction, pre-release volatility, inflation regime, monetary-policy regime, Maximum Favorable Excursion (MFE), Maximum Adverse Excursion (MAE), and net returns after spread, slippage, borrowing costs, and other applicable costs.
+Hypothesis validation
+The purpose of the backtest is not to select a few famous sessions that support the scenario. All available releases over a sufficiently long period should be tested.
+The SELL hypothesis would gain credibility if, after costs, large positive wage surprises produce positive average SHORT returns over a predefined window; the effect becomes stronger when 2-year/10-year yields rise after the release; hit rate and expected return remain positive out of sample; results survive different rate and inflation regimes; and performance does not depend on a handful of extreme events.
+Conversely, if the effect disappears out of sample, after costs, or after controlling for payroll and unemployment surprises, the hypothesis should be rejected or reformulated.
+Risks and limitations
+A SELL/SHORT position can incur rapid and substantial losses when the market reacts in the opposite direction. Prices can also experience slippage, gaps, extreme volatility, or sharp reversals following a release. Fees, spreads, borrowing costs, margin requirements, and leverage can materially worsen real-world results relative to a backtest.
+GSWL must therefore be treated as a detection and statistical-research tool, not as a system that guarantees an entry point, return, or maximum profit. Any validation of the hypothesis must include adverse events and losses, not only historical cases that support it.
+Conclusion of the directional research hypothesis
+The available historical evidence provides a credible basis for researching the GSWL directional hypothesis: labor-market announcements matter for asset prices, hourly-earnings surprises are among the variables used to explain yield reactions around employment reports, and unexpected changes in monetary-policy expectations have historically had meaningful effects on equities.
+This supports building and testing the chain:
+positive wage surprise → higher-yield confirmation → SELL/SHORT scenario.
+However, the evidence reviewed does not establish that shorting immediately after every wage increase maximizes gains. That proposition can only be evaluated using a historical database containing the official release, pre-release consensus, timestamps, interest-rate reaction, and intraday market prices.
+Main sources
+- U.S. Bureau of Labor Statistics — CES / Employment Situation
+  https://www.bls.gov/ces/data/
+- U.S. Bureau of Labor Statistics — September 2026 Employment Situation
+  https://www.bls.gov/news.release/archives/empsit_10022026.htm
+- Federal Reserve Board — Why Were Treasury Yields So Stable Over the Summer?
+  https://www.federalreserve.gov/econres/notes/feds-notes/why-were-treasury-yields-so-stable-over-the-summer-20201229.html
+- Federal Reserve Bank of New York — How Economic News Moves Markets
+  https://www.newyorkfed.org/research/current_issues/ci14-6.html
+- Bernanke & Kuttner — What Explains the Stock Market's Reaction to Federal Reserve Policy?
+  https://www.newyorkfed.org/research/staff_reports/sr174.html
+Current engine status
+GSWL V4.2 checks its sources hourly. The engine's checking frequency must not be confused with the publication frequency of each wage series (monthly, quarterly, semiannual, or annual).
+Data-selection policy:
+national official source > compatible supranational source > ILOSTAT fallback > retained latest official observation
+Values based on different units or definitions must never be directly compared as though they belonged to the same series.
