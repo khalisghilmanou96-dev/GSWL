@@ -1,36 +1,36 @@
 {
-  "checked_at": "2026-10-10T12:24:13.264998+00:00",
+  "checked_at": "2026-10-10T17:48:38.053875+00:00",
   "engine": "GSWL Data Engine V4.2",
   "sources": {
     "BLS_US": {
       "ok": true,
       "mode": "ACTIVE_FEED",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "series_id": "CES0500000003",
       "latest_period": "2026-09"
     },
     "ILOSTAT_MONTHLY": {
       "ok": false,
       "mode": "ACTIVE_FALLBACK",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "error": "HTTP Error 400: Bad Request"
     },
     "ILOSTAT_QUARTERLY": {
       "ok": false,
       "mode": "ACTIVE_FALLBACK",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "error": "HTTP Error 400: Bad Request"
     },
     "ILOSTAT_ANNUAL": {
       "ok": true,
       "mode": "ACTIVE_FALLBACK",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "last_modified": null
     },
     "EUROSTAT": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 751828,
       "last_modified": null,
       "url": "https://ec.europa.eu/eurostat/api/dissemination/catalogue/rss/en/statistics-update.rss"
@@ -38,7 +38,7 @@
     "OECD": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 144326,
       "last_modified": "2022-12-02",
       "url": "https://sdmx.oecd.org/public/rest/data/OECD.ELS.SAE,DSD_EARNINGS@AV_AN_WAGE,1.0/all?startPeriod=2024&dimensionAtObservation=AllDimensions"
@@ -46,7 +46,7 @@
     "ONS_UK": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 1590,
       "last_modified": null,
       "url": "https://api.beta.ons.gov.uk/v1/datasets?limit=1"
@@ -54,7 +54,7 @@
     "STATCAN_CA": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 69891,
       "last_modified": null,
       "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410022201"
@@ -62,7 +62,7 @@
     "ABS_AU": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 376161,
       "last_modified": "Fri, 09 Oct 2026 06:00:09 GMT",
       "url": "https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/average-weekly-earnings-australia/latest-release"
@@ -70,7 +70,7 @@
     "ESTAT_JP": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 200454,
       "last_modified": null,
       "url": "https://www.e-stat.go.jp/en/stat-search/database"
@@ -78,7 +78,7 @@
     "KOSIS_KR": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 51310,
       "last_modified": null,
       "url": "https://kosis.kr/eng/"
@@ -86,15 +86,15 @@
     "INEGI_MX": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 153815,
-      "last_modified": "Tue, 29 Sep 2026 11:57:20 GMT",
+      "last_modified": "Tue, 29 Sep 2026 11:57:50 GMT",
       "url": "https://www.inegi.org.mx/"
     },
     "GASTAT_SA": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 269467,
       "last_modified": null,
       "url": "https://www.stats.gov.sa/en"
@@ -102,7 +102,7 @@
     "FSO_CH": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 1815384,
       "last_modified": null,
       "url": "https://www.bfs.admin.ch/bfs/en/home/statistics/work-income/wages-income-employment-labour-costs.html"
@@ -110,23 +110,23 @@
     "STATISTICS_PL": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 73024,
-      "last_modified": "Sat, 10 Oct 2026 12:24:34 GMT",
+      "last_modified": "Sat, 10 Oct 2026 17:48:58 GMT",
       "url": "https://stat.gov.pl/en/"
     },
     "SSB_NO": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
-      "bytes": 175336,
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
+      "bytes": 175342,
       "last_modified": null,
       "url": "https://www.ssb.no/en/arbeid-og-lonn/lonn-og-arbeidskraftkostnader"
     },
     "NBS_CN": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 25116,
       "last_modified": null,
       "url": "https://www.stats.gov.cn/english/"
@@ -134,7 +134,7 @@
     "MOSPI_IN": {
       "ok": true,
       "mode": "MONITOR",
-      "checked_at": "2026-10-10T12:24:13.264998+00:00",
+      "checked_at": "2026-10-10T17:48:38.053875+00:00",
       "bytes": 2644,
       "last_modified": null,
       "url": "https://www.mospi.gov.in/"
